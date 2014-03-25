@@ -251,31 +251,31 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function createBasicDataStructure()
     {
         return array(
-            'mid'                           => $this->getMid(),
-            'vpn_pswd'                      => $this->getVpnPswd(),
-            'trans_id'                      => $this->getTransactionId(),
-            'ip'                            => $this->httpRequest->getClientIp(),
-            'name'                          => '',
-            'card_number'                   => '',
-            'amount'                        => '',
-            'remote_pswd'                   => $this->getRemotePswd(),
-            'new_trans_id'                  => '',
-            'expiry_date'                   => '',
-            'issue_number'                  => '',
-            'start_date'                    => '',
-            'order'                         => $this->getDescription(),
-            'shipping'                      => '',
-            'billing'                       => '',
-            'options'                       => '',
-            'device_category'               => ($this->isMobileBrowser()) ? '1' : '0',
-            'accept_headers'                => $this->httpRequest->headers->get('accept'),
-            'user_agent'                    => $this->httpRequest->headers->get('user_agent'),
-            'mpi_merchant_name'             => '', // if left blank, the mpi_merchant_* fields will use
-            'mpi_merchant_url'              => '', // values from the vendor's PayPoint.net profile
-            'mpi_description'               => $this->getDescription(), // the cart/order
-            'purchaseRecurringFrequency'    => '',
-            'purchaseRecurringExpiry'       => '',
-            'purchaseInstallments'          => '',
+            'mid'                        => $this->getMid(),
+            'vpn_pswd'                   => $this->getVpnPswd(),
+            'trans_id'                   => $this->getTransactionId(),
+            'ip'                         => $this->httpRequest->getClientIp(),
+            'name'                       => '',
+            'card_number'                => '',
+            'amount'                     => '',
+            'remote_pswd'                => $this->getRemotePswd(),
+            'new_trans_id'               => '',
+            'expiry_date'                => '',
+            'issue_number'               => '',
+            'start_date'                 => '',
+            'order'                      => $this->getDescription(),
+            'shipping'                   => '',
+            'billing'                    => '',
+            'options'                    => '',
+            'device_category'            => ($this->isMobileBrowser()) ? '1' : '0',
+            'accept_headers'             => $this->httpRequest->headers->get('accept'),
+            'user_agent'                 => $this->httpRequest->headers->get('user_agent'),
+            'mpi_merchant_name'          => '', // if left blank, the mpi_merchant_* fields will use
+            'mpi_merchant_url'           => '', // values from the vendor's PayPoint.net profile
+            'mpi_description'            => $this->getDescription(), // the cart/order
+            'purchaseRecurringFrequency' => '',
+            'purchaseRecurringExpiry'    => '',
+            'purchaseInstallments'       => '',
         );
     }
 
@@ -283,21 +283,22 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         // we'll be creating this with some default settings which can subsequently be overwritten as required
         return array(
-            'repeat'                        => '',
-            'cv2'                           => '',
-            'currency'                      => $this->getCurrency(),
-            'dups'                          => ($this->getTestStatus() === 'live') ? 'true' : 'false',
-            'test_status'                   => $this->getTestStatus(),
-            'test_mpi_status'               => ($this->getTestStatus() === 'live') ? '' : 'true',
-            'deferred'                      => '',
-            'usage_type'                    => $this->getUsageType(), // see note in SecPay/Gateway.php
-            'default_cv2avs'                => 'ALL MATCH', // The default should suffice for most test cases
-            'mail_merchants'                => '+RDLPAFCSEMQN:'.$this->getConfirmEmail(), // notify merchant of EVERYTHING
-            'mail_attach_merchant'          => 'false',
-            'mail_attach_customer'          => 'false',
-            'mail_customer'                 => ($this->getMailCustomer() === 'true') ? '+FARDLPQN:bill' : 'false', // for relevant events, notify the billing email address
-            'mail_html'                     => 'true',
-            'mail_message'                  => '',
+            'repeat'               => '',
+            'cv2'                  => '',
+            'currency'             => $this->getCurrency(),
+            'dups'                 => ($this->getTestStatus() === 'live') ? 'true' : 'false',
+            'test_status'          => $this->getTestStatus(),
+            'test_mpi_status'      => ($this->getTestStatus() === 'live') ? '' : 'true',
+            'deferred'             => '',
+            'usage_type'           => $this->getUsageType(), // see note in SecPay/Gateway.php
+            'default_cv2avs'       => 'ALL MATCH', // The default should suffice for most test cases
+            'mail_merchants'       => '+RDLPAFCSEMQN:'.$this->getConfirmEmail(), // notify merchant for EVERYTHING
+            'mail_attach_merchant' => 'false',
+            'mail_attach_customer' => 'false',
+            'mail_customer'        => ($this->getMailCustomer() === 'true') ? '+FARDLPQN:bill' : 'false',
+                                                               // for relevant events, notify the billing email address
+            'mail_html'            => 'true',
+            'mail_message'         => '',
         );
     }
 
