@@ -31,6 +31,15 @@ And run composer to update your dependencies:
 $ curl -s http://getcomposer.org/installer | php
 $ php composer.phar update
 
+## TODO
+
+I started building and testing support for a few things that I have not yet had the time to see
+through. For this reason you will find there are areas that are incomplete and for which I have
+not committed tests. Feel free to pick these up any time :)
+
+* 3D Secure
+* SecPay reports - a function that returns transaction history in CSV or XML format
+
 ## Basic Usage
 
 The following gateway is provided by this package:
