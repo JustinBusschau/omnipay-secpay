@@ -22,7 +22,7 @@ class PurchaseRequest extends AbstractRequest
 
         $requestData['expiry_date']         = $card->getExpiryDate('my');
 
-        if (empty($transRef)){
+        if (empty($transRef)) {
             $requestData['name']            = $card->getName();
             $requestData['card_number']     = $card->getNumber();
             $requestData['issue_number']    = $card->getIssueNumber();
