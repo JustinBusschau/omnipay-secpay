@@ -12,7 +12,21 @@ class ReportRequest extends AbstractRequest
     public function getData()
     {
         $requestData                    = $this->createBasicDataStructure();
-        $requestData['report_type']     = $this->getReportType(); // CSV CSV-All CSV-Summary CSV-Detail CSV-Five Summary Statement Origin-Statement XML-Report
+
+        /**
+         * Options for 'report_type' are as follows:
+         * - CSV
+         * - CSV-ALL
+         * - CSV-Summary
+         * - CSV-Detail
+         * - CSV-Five
+         * - Summary
+         * - Statement
+         * - Origin-Statement
+         * - XML-Report
+         */
+        $requestData['report_type']     = $this->getReportType();
+
         $requestData['cond_type']       = $this->getCondType(); // Date Batch TransId
 
         /**

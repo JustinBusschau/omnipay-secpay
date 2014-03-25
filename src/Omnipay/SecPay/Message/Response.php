@@ -13,25 +13,28 @@ use Omnipay\Common\Message\RequestInterface;
 class Response extends AbstractResponse implements RedirectResponseInterface
 {
     protected $responseVerbiage = array(
-        'A'     => 'Transaction authorised by bank. Auth Code: ', // 'auth_code available as bank reference.',
-        'N'     => 'The payment was not authorised, but no reason was given by the bank.',
-        'C'     => 'There has been a problem communicating with your bank.  Please try again later.',
-        'F'     => 'The payment system has detected a possible fraud.  Please contact your bank.',
-        'P:A'   => 'The payment was not authorised as there an amount was not provided for payment.',
-        'P:X'   => 'The payment was not authorised as not all mandatory parameters were supplied.',
-        'P:P'   => 'The payment was not authorised as the same payment was presented twice.',
-        'P:S'   => 'The payment was not authorised as the start date was invalid.',
-        'P:E'   => 'The payment was not authorised as the expiry date was invalid.',
-        'P:I'   => 'The payment was not authorised as the issue number was invalid.',
-        'P:C'   => 'The payment was not authorised as the card number was incorrect.',
-        'P:T'   => 'The payment was not authorised as the card type does not match the card number.',
-        'P:N'   => 'The payment was not authroised as the card holder name was not supplied properly.',
-        'P:M'   => 'The payment was not authorised as the merchant does not exist or not registered yet.',
-        'P:B'   => 'The payment was not authorised as the merchant account for card type does not exist.',
-        'P:D'   => 'The payment was not authorised as the merchant account for this currency does not exist.',
-        'P:V'   => 'The payment was not authorised as the CV2 security code is mandatory and was not supplied or was invalid.',
-        'P:R'   => 'The payment was not authorised as the transaction timed out awaiting a virtual circuit. Merchant may not have enough virtual circuits for the volume of business.',
-        'P:#'   => 'The payment was not authorised as there was no MD5 hash / token key set up against account.'
+        'A'   => 'Transaction authorised by bank. Auth Code: ', // 'auth_code available as bank reference.',
+        'N'   => 'The payment was not authorised, but no reason was given by the bank.',
+        'C'   => 'There has been a problem communicating with your bank.  Please try again later.',
+        'F'   => 'The payment system has detected a possible fraud.  Please contact your bank.',
+        'P:A' => 'The payment was not authorised as there an amount was not provided for payment.',
+        'P:X' => 'The payment was not authorised as not all mandatory parameters were supplied.',
+        'P:P' => 'The payment was not authorised as the same payment was presented twice.',
+        'P:S' => 'The payment was not authorised as the start date was invalid.',
+        'P:E' => 'The payment was not authorised as the expiry date was invalid.',
+        'P:I' => 'The payment was not authorised as the issue number was invalid.',
+        'P:C' => 'The payment was not authorised as the card number was incorrect.',
+        'P:T' => 'The payment was not authorised as the card type does not match the card number.',
+        'P:N' => 'The payment was not authroised as the card holder name was not supplied properly.',
+        'P:M' => 'The payment was not authorised as the merchant does not exist or not registered yet.',
+        'P:B' => 'The payment was not authorised as the merchant account for card type does not exist.',
+        'P:D' => 'The payment was not authorised as the merchant account for this currency does not exist.',
+        'P:V' =>
+            'The payment was not authorised as the CV2 security code is mandatory and was not supplied or was invalid.',
+        'P:R' =>
+            'The payment was not authorised as the transaction timed out awaiting a virtual circuit. \
+            Merchant may not have enough virtual circuits for the volume of business.',
+        'P:#' => 'The payment was not authorised as there was no MD5 hash / token key set up against account.'
     );
 
     public function __construct(RequestInterface $request, $data)
