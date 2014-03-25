@@ -2,7 +2,7 @@
 
 **SecPay for the Omnipay PHP payment processing library**
 
-[![Build Status](https://travis-ci.org/justinbusschau/omnipay-secpay.png?branch=master)](https://travis-ci.org/justinbusschau/omnipay-secpay)
+[![Build Status](https://travis-ci.org/JustinBusschau/omnipay-secpay.png?branch=master)](https://travis-ci.org/JustinBusschau/omnipay-secpay)
 [![Latest Stable Version](https://poser.pugx.org/justinbusschau/omnipay-secpay/version.png)](https://packagist.org/packages/justinbusschau/omnipay-secpay)
 [![Total Downloads](https://poser.pugx.org/justinbusschau/omnipay-secpay/d/total.png)](https://packagist.org/packages/justinbusschau/omnipay-secpay)
 
