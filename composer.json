@@ -1,0 +1,37 @@
+{
+    "name": "justinbusschau/omnipay-secpay",
+    "type": "library",
+    "description": "SecPay gateway for the Omnipay payment processing library",
+    "keywords": [
+        "secpay",
+        "paypoint.net",
+        "paypoint",
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "homepage": "https://github.com/justinbusschau/omnipay-secpay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Busschau",
+            "email": "justin.busschau@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Omnipay\\SecPay\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
