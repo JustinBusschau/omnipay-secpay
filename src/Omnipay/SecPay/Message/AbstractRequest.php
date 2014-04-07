@@ -179,6 +179,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('mailCustomer', $value);
     }
 
+    public function getAdditionalOptions()
+    {
+        return $this->getParameter('additionalOptions');
+    }
+
+    public function setAdditionalOptions($value)
+    {
+        return $this->setParameter('additionalOptions', $value);
+    }
+
     public function getEndpoint()
     {
         return $this->endpoint;
@@ -282,7 +292,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function createOptionStruct()
     {
         // we'll be creating this with some default settings which can subsequently be overwritten as required
-        return array(
+        $optionStruct = array(
             'repeat'               => '',
             'cv2'                  => '',
             'currency'             => $this->getCurrency(),
@@ -300,6 +310,13 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             'mail_html'            => 'true',
             'mail_message'         => '',
         );
+
+        $additionalOptions = $this->getAdditionalOptions();
+        if (is_array($additionalOptions)) {
+            $optionStruct = array_merge($optionStruct, $additionalOptions);
+        }
+
+        return $optionStruct;
     }
 
     public function buildOptionsQuery($options)

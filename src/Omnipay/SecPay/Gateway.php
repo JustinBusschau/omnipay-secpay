@@ -25,7 +25,8 @@ class Gateway extends AbstractGateway
             'usageType' => '',
             'confirmEmail' => '',
             'testStatus' => 'true',
-            'mailCustomer' => 'true'
+            'mailCustomer' => 'true',
+            'additionalOptions' => ''
         );
     }
 
@@ -113,6 +114,16 @@ class Gateway extends AbstractGateway
     public function setMailCustomer($value)
     {
         return $this->setParameter('mailCustomer', $value);
+    }
+
+    public function getAdditionalOptions()
+    {
+        return $this->getParameter('additionalOptions');
+    }
+
+    public function setAdditionalOptions($value)
+    {
+        return $this->setParameter('additionalOptions', $value);
     }
 
     public function authorize(array $options = array())

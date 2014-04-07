@@ -51,6 +51,13 @@ class GatewayTest extends GatewayTestCase
             'description' => 'Void Test',
             'card' => $this->getValidCard()
         );
+
+        $this->mcc6012Options = array(
+            'fin_serv_birth_date' => '19640225',
+            'fin_serv_surname' => 'ONuill',
+            'fin_serv_postcode' => 'NN5',
+            'fin_serv_account' => '12345ABCDE'
+        );
     }
 
     public function testAuthorizeSuccess()
@@ -216,6 +223,26 @@ class GatewayTest extends GatewayTestCase
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('VOIDTRXN02', $response->getTransactionReference());
         $this->assertSame('The payment was not authorised, but no reason was given by the bank.', $response->getMessage());
+    }
+
+    public function testMcc6012Options()
+    {
+        $this->setMockHttpResponse('PurchaseSuccess.txt');
+
+        $options = $this->purchaseOptions;
+        $options['transactionId'] = 'PURCHSUCCESS01';
+
+        $this->gateway->setAdditionalOptions($this->mcc6012Options);
+        $this->assertSame(
+            $this->gateway->getAdditionalOptions(),
+            $this->mcc6012Options
+        );
+
+        $response = $this->gateway->purchase($options)->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('PURCHSUCCESS01', $response->getTransactionReference());
+        $this->assertSame('Transaction authorised by bank. Auth Code: 9999', $response->getMessage());
     }
 
     // TODO: Add tests for 3DS.
