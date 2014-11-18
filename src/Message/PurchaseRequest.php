@@ -15,8 +15,7 @@ class PurchaseRequest extends AbstractRequest
         $card = $this->getCard();
 
         $requestData                    = $this->createBasicDataStructure();
-        $transRef                       = $this->getTransactionReference();
-        $requestData['trans_id']        = $transRef;
+        $requestData['trans_id']        = $this->getTransactionId();
         $requestData['amount']          = $this->getAmount();
 
         $requestData['expiry_date']     = $card->getExpiryDate('my');
@@ -41,8 +40,7 @@ class PurchaseRequest extends AbstractRequest
         $this->validate('amount', 'description', 'transactionId');
 
         $requestData                    = $this->createBasicDataStructure();
-        $transRef                       = $this->getTransactionReference();
-        $requestData['trans_id']        = $this->getTransactionId();
+        $requestData['trans_id']        = $this->getTransactionReference();
         $requestData['amount']          = $this->getAmount();
 
         $requestData['new_trans_id']    = $this->getTransactionId();
