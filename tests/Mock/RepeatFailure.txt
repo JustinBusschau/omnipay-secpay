@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/xml
+Content-Length:
+
+<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:validateCardFullResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://secvpn.secpay.com"><validateCardFullReturn xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?valid=false&amp;trans_id=REPEATFAILURE01&amp;code=P:E&amp;message=Preauth+Failed+:+See+code&amp;correct=false</validateCardFullReturn></ns1:validateCardFullResponse></soapenv:Body></soapenv:Envelope>
