@@ -32,6 +32,8 @@ class PurchaseRequest extends AbstractRequest
         $otherOptions['repeat']         = '';
         $otherOptions['cv2']            = $card->getCvv();
         $requestData['options']         = $this->buildOptionsQuery($otherOptions);
+
+        return $requestData;
     }
 
     private function getReusedCardData()
@@ -48,6 +50,8 @@ class PurchaseRequest extends AbstractRequest
         $otherOptions                   = $this->createOptionStruct();
         $otherOptions['repeat']         = 'true';
         $requestData['options']         = $this->buildOptionsQuery($otherOptions);
+
+        return $requestData;
     }
 
     public function getData()
