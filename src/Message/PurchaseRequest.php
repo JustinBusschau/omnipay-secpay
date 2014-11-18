@@ -56,10 +56,12 @@ class PurchaseRequest extends AbstractRequest
 
     public function getData()
     {
+        $transRef = $this->getTransactionReference();
+
         if (empty($transRef)) {
-            return $this->getReusedCardData();
-        } else {
             return $this->getNewCardData();
+        } else {
+            return $this->getReusedCardData();
         }
     }
 
