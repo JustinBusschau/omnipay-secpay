@@ -21,7 +21,9 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Omnipay\\SecPay\\" : "src/" }
+        "psr-4": {
+            "Omnipay\\SecPay\\" : "src/"
+        }
     },
     "require": {
         "omnipay/common": "~2.0"
