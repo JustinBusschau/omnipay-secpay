@@ -28,6 +28,7 @@ class CreateCardRequest extends AbstractRequest
         $requestData['billing']         = $this->buildAddress($card, 'Billing');
 
         $otherOptions                   = $this->createOptionStruct();
+        $otherOptions['deferred']       = 'true';
         $otherOptions['repeat']         = 'true';
         $otherOptions['cv2']            = $card->getCvv();
         $requestData['options']         = $this->buildOptionsQuery($otherOptions);
